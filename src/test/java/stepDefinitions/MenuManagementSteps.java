@@ -1,21 +1,26 @@
 package stepDefinitions;
 
+import LinkedInLearning.CucumberCourse.RestaurantMenu;
+import LinkedInLearning.CucumberCourse.RestaurantMenuItem;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class MenuManagementSteps {
+	
+	RestaurantMenuItem NewMenuItem;
 
 	@Given("I have a menu item with name {string} and price {int}")
 	public void i_have_a_menu_item_with_name_and_price(String newMenuItemName, Integer price) {
-		RestaurantMenuItem NewMenuItem;
 		NewMenuItem = new RestaurantMenuItem(newMenuItemName, "", price);
+		System.out.println("Step 1");
 	}
 
 	@When("I add that menu item")
 	public void i_add_that_menu_item() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		RestaurantMenu LocationMenu;
+		LocationMenu.Add(NewMenuItem);
+		System.out.println("Step 2");
 	}
 
 	@Then("Menu Item with name {string} should be added")
