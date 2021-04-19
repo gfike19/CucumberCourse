@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 public class MenuManagementSteps {
 	
 	RestaurantMenuItem NewMenuItem;
+	RestaurantMenu LocationMenu = new RestaurantMenu();
 
 	@Given("I have a menu item with name {string} and price {int}")
 	public void i_have_a_menu_item_with_name_and_price(String newMenuItemName, Integer price) {
@@ -18,15 +19,14 @@ public class MenuManagementSteps {
 
 	@When("I add that menu item")
 	public void i_add_that_menu_item() {
-		RestaurantMenu LocationMenu;
-		LocationMenu.Add(NewMenuItem);
+		LocationMenu.addMenuItem(NewMenuItem);
 		System.out.println("Step 2");
 	}
 
 	@Then("Menu Item with name {string} should be added")
 	public void menu_item_with_name_should_be_added(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    boolean Exists = LocationMenu.DoesItemExist(NewMenuItem);
+	    System.out.println("Step 3: " + Exists);
 	}
 	
 }

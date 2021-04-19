@@ -6,9 +6,16 @@ public class RestaurantMenu {
 	
 	ArrayList<RestaurantMenuItem> MenuItems = new ArrayList<RestaurantMenuItem>();
 	
-	public void Add(RestaurantMenuItem newMenuItem) {
-		// TODO Auto-generated method stub
-		
+	public boolean addMenuItem(RestaurantMenuItem newMenuItem) throws IllegalArgumentException {
+		return MenuItems.add(newMenuItem);
+	}
+	
+	public boolean DoesItemExist(RestaurantMenuItem newMenuItem) {
+		boolean Exists = false;
+		if(MenuItems.contains(newMenuItem)) {
+			Exists = true;
+		}
+		return Exists;
 	}
 	
 	
