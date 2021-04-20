@@ -8,6 +8,9 @@ public class RestaurantMenu {
 
 	
 	public boolean addMenuItem(RestaurantMenuItem newMenuItem) {
+		if (DoesItemExist(newMenuItem)) {
+			throw new IllegalArgumentException("Duplicate Item");
+		}
 				return MenuItems.add(newMenuItem);
 	}
 	

@@ -11,8 +11,9 @@ import linkedinlearning.cucumbercourse.RestaurantMenuItem;
 public class MenuManagementSteps {
 	RestaurantMenuItem NewMenuItem;
 	RestaurantMenu LocationMenu = new RestaurantMenu();
+	String ErrorMessage;
 
-
+	
 	@Given("I have a menu item with name \"([^\"]+)\" and price ([$]*)(\\d+)")
 	public void i_have_a_menu_item_with_name_and_price(String menuItemName, String CurrencyType, Integer price) {
 
@@ -22,7 +23,12 @@ public class MenuManagementSteps {
 
 	@When("I add that menu item")
 	public void i_add_that_menu_item() {
+		try {
 			LocationMenu.addMenuItem(NewMenuItem);
+		}
+		catch (IllegalArgumentException ex) {
+			ErrorMessage = ex.getMessage();
+		}
 		System.out.println("Step 2");
 	}
 

@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features= {"src/test/java/linkedinlearning/cucumbercourse/features"},
 		glue = {"stepdefinitions"},
-		tags = {@nightlyBuildTest,@RegularTest"},
+		tags = {"not @NightlyBuildTest"},
 		plugin= {"pretty"})
 public class MenuManagementTest {
 
