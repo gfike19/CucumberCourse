@@ -10,8 +10,8 @@ public class MenuManagementSteps {
 	
 	RestaurantMenuItem NewMenuItem;
 	RestaurantMenu LocationMenu = new RestaurantMenu();
-
-	@Given("I have a menu item with name {string} and price {int}")
+	// regex can be added in places where string is and other things are
+	@Given("I have a menu item with name {string} and price (\\d+)")
 	public void i_have_a_menu_item_with_name_and_price(String newMenuItemName, Integer price) {
 		NewMenuItem = new RestaurantMenuItem(newMenuItemName, "", price);
 		System.out.println("Step 1");
