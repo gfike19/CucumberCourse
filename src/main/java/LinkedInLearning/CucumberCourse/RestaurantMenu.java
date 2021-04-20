@@ -1,22 +1,23 @@
-package LinkedInLearning.CucumberCourse;
+package linkedinlearning.cucumbercourse;
 
 import java.util.ArrayList;
 
 public class RestaurantMenu {
-	
+
 	ArrayList<RestaurantMenuItem> MenuItems = new ArrayList<RestaurantMenuItem>();
+
 	
-	public boolean addMenuItem(RestaurantMenuItem newMenuItem) throws IllegalArgumentException {
-		return MenuItems.add(newMenuItem);
+	public boolean addMenuItem(RestaurantMenuItem newMenuItem) {
+				return MenuItems.add(newMenuItem);
 	}
 	
 	public boolean DoesItemExist(RestaurantMenuItem newMenuItem) {
 		boolean Exists = false;
-		if(MenuItems.contains(newMenuItem)) {
+		if (MenuItems.contains(newMenuItem)) {
 			Exists = true;
 		}
 		return Exists;
 	}
-	
+
 	
 }

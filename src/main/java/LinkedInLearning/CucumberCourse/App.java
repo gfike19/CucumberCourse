@@ -1,4 +1,4 @@
-package LinkedInLearning.CucumberCourse;
+package linkedinlearning.cucumbercourse;
 
 /**
  * Hello world!
